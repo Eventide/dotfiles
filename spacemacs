@@ -251,6 +251,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
   (toggle-frame-fullscreen)
+  (fancy-battery-mode)
+  (setq paradox-github-token '914104d0cd3aa0fe5937d426a0a96df37e459f66)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
