@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/usr/local/bin/btsync
+Icon=system-run
+Path=
+Terminal=false
+Type=Application

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=ssh-add < /dev/null
+Icon=system-run
+Path=
+Terminal=false
+Type=Application
