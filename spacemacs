@@ -113,7 +113,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Consolas"
+   dotspacemacs-default-font '("Source Code Pro"
                                :size 18
                                :weight normal
                                :width normal
@@ -262,7 +262,7 @@ you should place you code here."
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font)
                       charset
-                      (font-spec :family "Noto Sans CJK SC" :size 16))) )
+                      (font-spec :family "Noto Sans CJK SC"))) )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
