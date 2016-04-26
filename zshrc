@@ -5,6 +5,7 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+HOSTNAME=$(cat /etc/hostname)
 ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -57,6 +58,10 @@ plugins=(git)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+# Check if we are on SSH or not
+if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
+  PS1=%{$fg_bold[red]%}$HOSTNAME\ $PS1
+fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
