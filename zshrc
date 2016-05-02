@@ -50,7 +50,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git gpg-agent archlinux)
 
 # User configuration
 
@@ -89,3 +89,4 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export SSH_ASKPASS="/usr/bin/ksshaskpass"
 mcd() { mkdir -p $1 && cd $1 }
+alias vi="emacsclient -t"
