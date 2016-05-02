@@ -32,7 +32,7 @@ values."
      git
      markdown
      org
-     ;; smex
+     smex
      (shell :variables
             shell-default-shell 'zsh
             shell-default-height 30
@@ -259,6 +259,7 @@ you should place you code here."
   (toggle-frame-fullscreen)
   (fancy-battery-mode)
   (fcitx-aggressive-setup)
+  (global-linum-mode)
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font)
                       charset
