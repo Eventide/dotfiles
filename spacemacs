@@ -28,11 +28,12 @@ values."
              chinese-enable-fcitx t
              chinese-enable-youdao-dict t)
      better-defaults
+     c-c++
      emacs-lisp
      git
      markdown
      org
-     smex
+     ; smex
      (shell :variables
             shell-default-shell 'zsh
             shell-default-height 30
