@@ -89,4 +89,3 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export SSH_ASKPASS="/usr/bin/ksshaskpass"
 mcd() { mkdir -p $1 && cd $1 }
-alias vi="emacsclient -t"
