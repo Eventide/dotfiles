@@ -47,6 +47,8 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
+                                      chinese-fonts-setup
+                                      org-chinese-utils
                                       fcitx
                                       youdao-dictionary)
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -115,7 +117,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 18
+                               :size 24
                                :weight normal
                                :width normal
                                :powerline-scale 1.3)
@@ -264,7 +266,20 @@ you should place you code here."
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font)
                       charset
-                      (font-spec :family "Noto Sans CJK SC"))) )
+                      (font-spec :family "Noto Mono Sans CJK SC"
+                                 :size 24)))
+  (setq default-input-method "chinese-pyim")
+  (global-set-key (kbd "C-\\") 'toggle-input-method)
+  (setq pyim-dicts
+        '((:name "guessdict" :file "/home/debian/pyim/pyim-guessdict.pyim" :coding utf-8-unix :dict-type guess-dict)
+          (:name "dict1" :file "/home/debian/pyim/cellbase.pyim" :coding utf-8-unix :dict-type pinyin-dict)
+          (:name "dict2" :file "/home/debian/pyim/pyim-bigdict.pyim" :coding utf-8-unix :dict-type pinyin-dict)))
+  (setq pyim-default-pinyin-scheme 'xiaohe-shuangpin)
+  (setq pyim-company-max-length 6)
+  (setq pyim-company-complete-chinese-enable nil)
+  )
+
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -279,7 +294,12 @@ you should place you code here."
     ((c-mode . "linux")
      (java-mode . "java")
      (awk-mode . "awk")
-     (other . "gnu")))))
+     (other . "gnu"))))
+ '(pyim-dicts
+   (quote
+    ((:name "guessdict" :file "/home/debian/pyim/pyim-guessdict.gpyim" :coding utf-8-unix :dict-type guess-dict)
+     (:name "dict1" :file "/home/debian/pyim/cellbase.pyim" :coding utf-8-unix :dict-type pinyin-dict)
+     (:name "dict2" :file "/home/debian/pyim/pyim-bigdict.pyim" :coding utf-8-unix :dict-type pinyin-dict)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
